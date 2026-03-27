@@ -1,8 +1,18 @@
 # Projet Fil Rouge — Deep Learning (ENSPD)
 
 **Framework :** TensorFlow / Keras  
-**Auteur :** ABTELX / ENSPD  
+**Auteur :** Groupe 6 — SDIA3 / ENSPD  
 **Évaluation :** Dr. Noulapeu N. A.
+
+---
+
+## 👥 Membres du Groupe 6
+
+- Etienne Jospin Abate Ovono
+- Amogo Martine Laurette
+- Fogueng Fotso Ampere Donald
+- Kong Roland Durel
+- Nga Ndzengue Lorie Gabrielle Scheneider
 
 ---
 
