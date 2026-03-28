@@ -274,8 +274,17 @@ plt.rcParams.update({
 # FONCTIONS UTILITAIRES
 # ══════════════════════════════════════════════════════════════════════════════
 
+# Vérification TensorFlow disponible
+try:
+    import tensorflow as _tf
+    TF_AVAILABLE = True
+except ImportError:
+    TF_AVAILABLE = False
+
 @st.cache_resource(show_spinner="⏳ Chargement du modèle CNN...")
 def load_cnn_model():
+    if not TF_AVAILABLE:
+        return None
     import tensorflow as tf
     import sys
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -290,6 +299,8 @@ def load_cnn_model():
 
 @st.cache_resource(show_spinner="⏳ Chargement du modèle LSTM...")
 def load_lstm_model():
+    if not TF_AVAILABLE:
+        return None
     import tensorflow as tf
     import sys
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
