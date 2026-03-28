@@ -61,6 +61,15 @@ class CustomLSTM(tf.keras.Model):
         x = self.dense1(x)
         return self.output_layer(x)
 
+    def get_config(self):
+        return {"dropout_rate": 0.2}
+
+    @classmethod
+    def from_config(cls, config):
+        config.pop("trainable", None)
+        config.pop("dtype", None)
+        return cls(**config)
+
     def build_graph(self, sequence_length: int, num_features: int):
         """
         Force la construction du graphe pour afficher model.summary().

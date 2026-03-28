@@ -97,6 +97,15 @@ class CustomCNN(tf.keras.Model):
         x = self.dense2(x)
         return self.output_layer(x)
 
+    def get_config(self):
+        return {"num_classes": 10, "dropout_rate": 0.5}
+
+    @classmethod
+    def from_config(cls, config):
+        config.pop("trainable", None)
+        config.pop("dtype", None)
+        return cls(**config)
+
     def build_graph(self, input_shape=(32, 32, 3)):
         """
         Force la construction du graphe pour afficher model.summary().
